@@ -1,0 +1,18 @@
+public class StudentDriver {
+
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setName("Becky");
+        s1.setID(112);
+        s1.fee = 1000.56;
+
+        System.out.println("S1 - ID: " + s1.getID() + ", name: " + s1.getName());
+
+        Student s2 = new Student();
+        s2.setName("Joe");
+        s2.setID(113);
+
+        System.out.println("S2 - ID: " + s2.getID() + ", name: " + s2.getName());
+
+    }
+}
