@@ -1,0 +1,16 @@
+package firstApplication;
+
+public class ApplicationDriver {
+    public static void main (String[] args) {
+        Person tania = new Person();
+        Person bowei = new Person();
+        tania.setAge(18);
+        tania.setFavColour("red");
+        bowei.setAge(19);
+        bowei.setFavColour("blue");
+        System.out.println("Tania is " + tania.getAge() + " years old.");
+        System.out.println("Tania's fav colour is " + tania.getFavColour());
+        System.out.println("Bowei is " + bowei.getAge() + " years old.");
+        System.out.println("Bowei's fav colour is " + bowei.getFavColour());
+    }
+}
