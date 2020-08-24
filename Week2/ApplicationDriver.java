@@ -1,4 +1,4 @@
-package Week02;
+package Week2;
 
 public class ApplicationDriver {
     public static void main(String[] args) {

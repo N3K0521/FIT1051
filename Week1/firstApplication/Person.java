@@ -1,4 +1,4 @@
-package firstApplication;
+package Week1.firstApplication;
 
 public class Person {
     private int age;
