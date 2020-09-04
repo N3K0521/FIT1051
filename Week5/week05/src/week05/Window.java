@@ -1,4 +1,4 @@
-package week04.src.week04;
+package week05.src.week05;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -96,11 +96,11 @@ public class Window extends JFrame {
         doItButton.setBorder(buttonBorder);
 
         final Window thisWindow = this; //inside the auto instantiated ActionListener object "this" will refer to the ActionListener object
-        final DoingIt doer = new DoingIt(); //efficient
+        //DoingIt doer = new DoingIt(); //efficient
         doItButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //DoingIt doer = new DoingIt(); //inefficient
+                DoingIt doer = new DoingIt(); //inefficient
                 doer.doIt(thisWindow);
             }
         });

@@ -1,4 +1,4 @@
-package Week4.week04.src.week04;
+package week04.src.week04;
 
 /**
  * Created by shuxford
@@ -12,10 +12,10 @@ public class DoingIt {
 //        lab1();
 //        lab2();
 //        lab3();
-//        lab4();
+        lab4();
 //        lab5();
 //        lab6();
-        lab7();
+//        lab7();
 //        lab8();
 
 //        assignmentIsAnOperator();
@@ -140,7 +140,7 @@ public class DoingIt {
     private void lab5(){
         //Return false if a String variable "userInput" doesn't have the value "FIT2095"
         String userInput = myWindow.readIn();
-        String value = new String("FIT2095");
+        String value = new String("FIT2095");// assign value to the String variable
         boolean isFalse= userInput.contains("FIT2095") & userInput.equals(value);
         // ==(equality/inequality operators only compare whether the two variables are stored
         // at the same location in memory, which is one value being referenced by two variables;
