@@ -12,8 +12,8 @@ public class TravelAgency {
     //Lab 3
     //Constructors
     public TravelAgency (String agencyName, String agencyAddress, String[] destinations) {
-        setAgencyName("");
-        setAgencyAddress("");
+        setAgencyName(agencyName);
+        setAgencyAddress(agencyAddress);
         setDestinations(destinations);
         setReservations(new ArrayList<>());
     }
@@ -66,7 +66,7 @@ public class TravelAgency {
 
         retVal += "Agency name: " + agencyName + " / ";
         retVal += "Agency address: " + agencyAddress + " / ";
-        retVal += "Destinaitons: " + Arrays.toString(destinations) + " / ";
+        retVal += "Destinations: " + Arrays.toString(destinations) + " / ";
         retVal += "Reservations: " + reservations;
 
         return retVal;
@@ -75,36 +75,42 @@ public class TravelAgency {
     //Lab 5
     public boolean isBookingValid(String booking) {
 
-        boolean result = true;
+        boolean valid = true;
         try {
-            String[] bookingString = booking.split(";");
+            String[] tokens = booking.split(";");
 
-            if(bookingString == null || bookingString.length < 3 || bookingString.length > 3) {
-                result = false;
+            //only three parts
+            if(tokens.length != 3) {
+                valid = false;
             }
-            String destination = bookingString[0];
+
+            //first part is a string
+            String destination = tokens[0];
             if(destination != null && destination.equals("")) {
-                result = false;
+                valid = false;
             }
-            boolean destinationFound = false;
-            for (int i = 0; i < destinations.length; i++) {
-                if(destination.equals(destinations[i])) {
-                    destinationFound = true;
-                    break;
+
+            //first part can be found in the destination array
+            boolean found = false;
+            for (String s : destinations) {
+                if (destination.equals(s)) {
+                    found = true;
                 }
             }
-            if(!destinationFound) {
-                result = false;
+            if(!found) {
+                valid = false;
             }
-            //checking if no of persons is numeric
-            Integer.parseInt(bookingString[1]);
-            //checking if cost is numeric
-            Double.parseDouble(bookingString[2]);
 
-        } catch (NumberFormatException e) {
-            result = false;
+            //second is numeric
+            Integer.parseInt(tokens[1]);
+
+            //third is numeric
+            Double.parseDouble(tokens[2]);
+
+        } catch (Exception e) {
+            valid = false;
         }
-        return result;
+        return valid;
     }
 
     //Lab 6
